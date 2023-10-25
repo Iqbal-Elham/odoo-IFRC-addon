@@ -3,9 +3,9 @@
 # from odoo import models, fields, api
 
 
-# class ifrc(models.Model):
-#     _name = 'ifrc.ifrc'
-#     _description = 'ifrc.ifrc'
+# class volunteer_management(models.Model):
+#     _name = 'volunteer_management.volunteer_management'
+#     _description = 'volunteer_management.volunteer_management'
 
 #     name = fields.Char()
 #     value = fields.Integer()
