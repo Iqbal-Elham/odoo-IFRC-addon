@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="ifrc.list">
+      <field name="name">ifrc list</field>
+      <field name="model">ifrc.ifrc</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="ifrc.action_window">
+      <field name="name">ifrc window</field>
+      <field name="res_model">ifrc.ifrc</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="ifrc.action_server">
+      <field name="name">ifrc server</field>
+      <field name="model_id" ref="model_ifrc_ifrc"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="ifrc" id="ifrc.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="ifrc.menu_1" parent="ifrc.menu_root"/>
+    <menuitem name="Menu 2" id="ifrc.menu_2" parent="ifrc.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="ifrc.menu_1_list" parent="ifrc.menu_1"
+              action="ifrc.action_window"/>
+    <menuitem name="Server to list" id="ifrc" parent="ifrc.menu_2"
+              action="ifrc.action_server"/>
+-->
+  </data>
+</odoo>
