@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "volunteer_management",
+    'name': "Volunteer Management System",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Volunteer Management System
+        """,
 
     'description': """
         Long description of module's purpose
@@ -18,15 +18,16 @@
     # for the full list
     'category': 'Uncategorized',
     'version': '0.1',
+    'sequence': '-1000',
+    'application': True,
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'security/ir.model.access.csv',
+        'views/volunteers.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

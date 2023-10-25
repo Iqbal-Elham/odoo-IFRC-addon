@@ -1,0 +1,202 @@
+<odoo>
+  <data>
+
+    <record id="vms_volunteer_view_tree" model="ir.ui.view">
+      <field name="name">vms.volunteer.view.tree</field>
+      <field name="model">vms.volunteer</field>
+      <field name="arch" type="xml">
+        <tree string="">
+          <field name="id" />
+          <field name="name" />
+          <field name="father_name" />
+          <field name="tazkira_number" />
+          <field name="mobile" />
+          <field name="dob" />
+          <field name="age" />
+          <field name="gender" />
+          <field name="marital_status" optional="hidden" />
+          <field name="blood_group" />
+          <field name="place_of_work" />
+          <field name="number_of_children" optional="hidden" />
+          <field name="driver_license" />
+          <field name="permanent_village" optional="hidden" />
+          <field name="permanent_school_mosque" optional="hidden" />
+          <field name="current_village" />
+          <field name="current_school_mosque" optional="hidden" />
+          <field name="university_school" optional="hidden" />
+          <field name="specialization" optional="hidden" />
+        </tree>
+      </field>
+    </record>
+
+
+    <record id="vms_volunteer_view_form" model="ir.ui.view">
+      <field name="name">vms.volunteer.view.form</field>
+      <field name="model">vms.volunteer</field>
+      <field name="arch" type="xml">
+        <form string="Volunteer">
+          <sheet>
+            <field name="photo" widget="image" class="oe_avatar" />
+            <div class="oe_title">
+              <label for="name" class="oe_edit_only"></label>
+              <h1>
+                <field name="name" string="Fullname" />
+              </h1>
+            </div>
+
+            <group name="volunteers_description">
+              <group>
+                <field name="father_name" />
+                <field name="dob" />
+                <field name="tazkira_number" />
+                <field name="age" />
+                <field name="place_of_work" />
+                <field name="specialization" />
+                <field name="mobile" />
+              </group>
+              <group>
+                <field name="gender" />
+                <field name="marital_status" />
+                <field name="number_of_children" />
+                <field name="blood_group" />
+                <field name="driver_license" />
+
+              </group>
+
+            </group>
+            <notebook>
+              <page name="address" string="Address ">
+                <group>
+                  <group>
+                    <field name="permanent_village" />
+                    <field name="permanent_school_mosque" />
+                  </group>
+                  <group>
+                    <field name="current_village" />
+                    <field name="current_school_mosque" />
+                  </group>
+                </group>
+
+              </page>
+            </notebook>
+
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <record id="vms_volunteer_view_kanban" model="ir.ui.view">
+      <field name="name">vms_volunteer.view.kanban</field>
+      <field name="model">vms.volunteer</field>
+      <field name="arch" type="xml">
+        <kanban class="o_res_partner_kanban" sample="1">
+          <field name="name" />
+          <field name="mobile" />
+          <field name="age" />
+          <field name="number_of_children" />
+          <field name="photo" />
+          <field name="permanent_village" />
+          <field name="permanent_school_mosque" />
+          <field name="current_village" />
+          <field name="current_school_mosque" />
+          <field name="id" />
+          <field name="specialization" />
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click o_kanban_record_has_image_fill">
+                <!-- <field name="photo" widget="image" class="oe_avatar w-50
+                o_kanban_image_inner_pic"
+                  options="{'preview_image':'photo'}" /> -->
+                <div class="o_kanban_image_fill_left o_kanban_image_full"
+                  t-attf-style="background-image: url(#{kanban_image('vms.volunteer', 'photo', record.id.raw_value)})"
+                  role="img" />
+                <!-- <div class="o_kanban_image"
+                  t-attf-style="background-image: url(#{background_image})">
+                  <img class="" t-att-alt="record.name"
+                    t-att-src="kanban_image('vms.volunteer', 'photo', record.id.raw_value)" />
+                </div> -->
+
+                <div class="oe_kanban_details d-flex flex-column justify-content-between">
+                  <strong class="o_kanban_record_title oe_partner_heading">
+                    <field name="name" class="" />
+                  </strong>
+                  <field name="specialization" class="o_text_overflow" />
+                  <field name="place_of_work" />
+                  <field name="mobile" class="" />
+                </div>
+                <!--                 
+                <t t-else="">
+                  <div class="o_kanban_image_fill_left o_kanban_image_full"
+                    t-attf-style="background-image: url(#{kanban_image('res.partner', 'avatar_128',
+    record.id.raw_value)})"
+                    role="img" />
+                </t> -->
+                <!-- <div class="ribbon ribbon-top-right" attrs="{'invisible': [('active', '=',
+                True)]}">
+                  <span class="bg-danger">Archived</span>
+                </div>
+                <div class="oe_kanban_details d-flex flex-column justify-content-between">
+                  <div>
+                    <strong class="o_kanban_record_title oe_partner_heading">
+                      <field name="display_name" />
+                    </strong>
+                    <div class="o_kanban_tags_section oe_kanban_partner_categories" />
+                    <ul>
+                      <li t-if="record.parent_id.raw_value and !record.function.raw_value">
+                        <field name="parent_id" />
+                      </li>
+                      <li t-elif="!record.parent_id.raw_value and record.function.raw_value">
+                        <field name="function" />
+                      </li>
+                      <li t-elif="record.parent_id.raw_value and record.function.raw_value"><field
+                          name="function" /> at <field name="parent_id" /></li>
+                      <li t-if="record.city.raw_value or record.country_id.raw_value">
+                        <t t-if="record.city.raw_value">
+                          <field name="city" />
+                          <t t-if="record.country_id.raw_value">, </t>
+                        </t>
+                        <t t-if="record.country_id.raw_value">
+                          <field name="country_id" />
+                        </t>
+                      </li>
+                      <li t-if="record.email.raw_value" class="o_text_overflow">
+                        <field name="email" />
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="o_kanban_record_bottom">
+                    <div class="oe_kanban_bottom_left" />
+                    <div class="oe_kanban_bottom_right" />
+                  </div>
+                </div> -->
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+
+    <record id="vms_volunteer_action" model="ir.actions.act_window">
+      <field name="name">Volunteer Management</field>
+      <field name="res_model">vms.volunteer</field>
+      <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+
+    <menuitem id="vms_volunteer_menu" name="VMS" sequence="10">
+
+      <menuitem id="volunteers_menu" name="Volunteers" sequence="1">
+        <menuitem
+          id="volunteers_list"
+          name="volunteers"
+          action="vms_volunteer_action"
+          sequence="1" />
+      </menuitem>
+
+
+    </menuitem>
+
+  </data>
+</odoo>
