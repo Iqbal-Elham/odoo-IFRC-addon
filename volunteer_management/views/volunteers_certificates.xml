@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Certificate Form View -->
+<record id="view_certificate_form" model="ir.ui.view">
+    <field name="name">certificate.form</field>
+    <field name="model">vms.certificate</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="volunteer_id"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<!-- Certificate Tree View -->
+<record id="view_certificate_tree" model="ir.ui.view">
+    <field name="name">certificate.tree</field>
+    <field name="model">vms.certificate</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="volunteer_id"/>
+        </tree>
+    </field>
+</record>
+
+
+</odoo>

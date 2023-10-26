@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Training Form View -->
+    <record id="view_training_form" model="ir.ui.view">
+        <field name="name">training.form</field>
+        <field name="model">vms.training</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="volunteer_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Training Tree View -->
+    <record id="view_training_tree" model="ir.ui.view">
+        <field name="name">training.tree</field>
+        <field name="model">vms.training</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="volunteer_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Deployment Form View -->
+    <record id="view_deployment_form" model="ir.ui.view">
+        <field name="name">deployment.form</field>
+        <field name="model">vms.deployment</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="volunteer_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Deployment Tree View -->
+    <record id="view_deployment_tree" model="ir.ui.view">
+        <field name="name">deployment.tree</field>
+        <field name="model">vms.deployment</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="volunteer_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+</odoo>

@@ -1,2 +1,14 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_vms_volunteer,vms_volunteer,model_vms_volunteer,,1,1,1,1
+access_vms_occupation,Access Rights for Occupation,model_vms_occupation,,1,1,1,1
+access_vms_language,Access Rights for Language,model_vms_language,,1,1,1,1
+access_vms_disability,Access Rights for Disability,model_vms_disability,,1,1,1,1
+access_vms_volunteer_type,Access Rights for Volunteer Type,model_vms_volunteer_type,,1,1,1,1
+access_vms_province,Access Rights for Province,model_vms_province,,1,1,1,1
+access_vms_district,Access Rights for District,model_vms_district,,1,1,1,1
+access_vms_emergency_contact,Access Rights for Emergency Contact,model_vms_emergency_contact,,1,1,1,1
+access_vms_education_degree,Access Rights for Education Degree,model_vms_education_degree,,1,1,1,1
+access_vms_document,Access Rights for Document,model_vms_document,,1,1,1,1
+access_vms_deployment,Access Rights for Deployment,model_vms_deployment,,1,1,1,1
+access_vms_certificate,Access Rights for Certificate,model_vms_certificate,,1,1,1,1
+access_vms_training,Access Rights for Training,model_vms_training,,1,1,1,1

@@ -36,6 +36,18 @@
       <field name="arch" type="xml">
         <form string="Volunteer">
           <sheet>
+            <div class="oe_button_box" name="button_box">
+              <button name="open_deployments" type="object" class="oe_stat_button" icon="fa-paper-plane">
+                <field name="deployments" string="Deployments" widget="statinfo"/>
+              </button>
+              <button name="open_certificates" type="object" class="oe_stat_button" icon="fa-certificate">
+                <field name="certificates" string="Certificates" widget="statinfo"/>
+              </button>
+              <button name="open_trainings" type="object" class="oe_stat_button" icon="fa-graduation-cap">
+                <field name="trainings" string="Trainings" widget="statinfo"/>
+              </button>
+            </div>
+
             <field name="photo" widget="image" class="oe_avatar" />
             <div class="oe_title">
               <label for="name" class="oe_edit_only"></label>
@@ -50,8 +62,6 @@
                 <field name="dob" />
                 <field name="tazkira_number" />
                 <field name="age" />
-                <field name="place_of_work" />
-                <field name="specialization" />
                 <field name="mobile" />
               </group>
               <group>
@@ -59,6 +69,7 @@
                 <field name="marital_status" />
                 <field name="number_of_children" />
                 <field name="blood_group" />
+                <field name="type_of_volunteer" />
                 <field name="driver_license" />
 
               </group>
@@ -70,13 +81,54 @@
                   <group>
                     <field name="permanent_village" />
                     <field name="permanent_school_mosque" />
+                    <field name="permanent_province" />
+                    <field name="permanent_district" />
                   </group>
                   <group>
                     <field name="current_village" />
                     <field name="current_school_mosque" />
+                    <field name="current_province" />
+                    <field name="current_district" />
                   </group>
                 </group>
 
+              </page>
+              <page name="Education_and_Work" string="Education and Work">
+                <group>
+                  <group>
+                    <field name="occupation" />
+                    <field name="specialization" />
+                    <field name="place_of_work" />
+                  </group>
+                  <group>
+                    <field name="languages" widget="many2many_tags"/>
+                    <field name="education_degree" />
+                  </group>
+                </group>
+
+              </page>
+              <page name="disabilities" string="Disabilities">
+                <field name="disabilities">
+                  <tree>
+                    <field name="name" />
+                  </tree>
+                </field>
+
+              </page>
+              <page name="emergency_contacts" string="Emergency Contacts">
+                <field name="emergency_contacts">
+                  <tree>
+                    <field name="name" />
+                  </tree>
+                </field>
+              </page>
+              <page name="documents" string="Documents">
+                <field name="documents">
+                  <tree>
+                    <field name="name" />
+                    <field name="document_file" widget="binary"/>
+                  </tree>
+                </field>
               </page>
             </notebook>
 
@@ -106,15 +158,10 @@
             <t t-name="kanban-box">
               <div class="oe_kanban_global_click o_kanban_record_has_image_fill">
                 <!-- <field name="photo" widget="image" class="oe_avatar w-50
-                o_kanban_image_inner_pic"
-                  options="{'preview_image':'photo'}" /> -->
-                <div class="o_kanban_image_fill_left o_kanban_image_full"
-                  t-attf-style="background-image: url(#{kanban_image('vms.volunteer', 'photo', record.id.raw_value)})"
-                  role="img" />
-                <!-- <div class="o_kanban_image"
-                  t-attf-style="background-image: url(#{background_image})">
-                  <img class="" t-att-alt="record.name"
-                    t-att-src="kanban_image('vms.volunteer', 'photo', record.id.raw_value)" />
+                o_kanban_image_inner_pic" options="{'preview_image':'photo'}" /> -->
+                <div class="o_kanban_image_fill_left o_kanban_image_full" t-attf-style="background-image: url(#{kanban_image('vms.volunteer', 'photo', record.id.raw_value)})" role="img" />
+                <!-- <div class="o_kanban_image" t-attf-style="background-image: url(#{background_image})">
+                  <img class="" t-att-alt="record.name" t-att-src="kanban_image('vms.volunteer', 'photo', record.id.raw_value)" />
                 </div> -->
 
                 <div class="oe_kanban_details d-flex flex-column justify-content-between">
@@ -143,11 +190,7 @@
     <menuitem id="vms_volunteer_menu" name="VMS" sequence="10">
 
       <menuitem id="volunteers_menu" name="Volunteers" sequence="1">
-        <menuitem
-          id="volunteers_list"
-          name="volunteers"
-          action="vms_volunteer_action"
-          sequence="1" />
+        <menuitem id="volunteers_list" name="volunteers" action="vms_volunteer_action" sequence="1" />
       </menuitem>
 
 
