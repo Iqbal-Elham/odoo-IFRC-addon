@@ -137,6 +137,27 @@
       </field>
     </record>
 
+    <record id="vms_volunteers_search" model="ir.ui.view">
+      <field name="name">vms.volunteer.view.search</field>
+      <field name="model">vms.volunteer</field>
+      <field name="arch" type="xml">
+          <search string="Transfers">
+              <field name="name" string="Name"/>
+              <field name="tazkira_number" string="Tazkira Number"/>
+              <field name="blood_group" string="Blood Group"/>
+              <field name="age" string="Age"/>
+              <field name="tazkira_number" string="Tazkira Number"/>
+
+              <filter string="Male" name="Gender" domain="[('gender', '=', 'male')]"/>
+              <filter string="Female" name="Gender" domain="[('gender', '=', 'female')]"/>
+
+              <filter string="Group By volunteer type" name="type_of_volunteer" context="{'group_by': 'type_of_volunteer'}"/>
+              <filter string="Group By specialization" name="specialization" context="{'group_by': 'specialization'}"/>
+              <filter string="Group By Blood Group" name="blood_group" context="{'group_by': 'blood_group'}"/>
+
+          </search>
+      </field>
+  </record>
 
     <record id="vms_volunteer_view_kanban" model="ir.ui.view">
       <field name="name">vms_volunteer.view.kanban</field>

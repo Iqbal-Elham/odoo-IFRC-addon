@@ -1,21 +1,11 @@
 # -*- coding: utf-8 -*-
-# from odoo import http
+from odoo.addons.portal.controllers.portal import CustomerPortal
+from odoo.http import request
 
 
-# class VolunteerManagement(http.Controller):
-#     @http.route('/volunteer_management/volunteer_management', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
+class VolunteerPortal(CustomerPortal):
 
-#     @http.route('/volunteer_management/volunteer_management/objects', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('volunteer_management.listing', {
-#             'root': '/volunteer_management/volunteer_management',
-#             'objects': http.request.env['volunteer_management.volunteer_management'].search([]),
-#         })
-
-#     @http.route('/volunteer_management/volunteer_management/objects/<model("volunteer_management.volunteer_management"):obj>', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('volunteer_management.object', {
-#             'object': obj
-#         })
+    def _prepare_home_portal_values(self, counters):
+        rtn = super()._prepare_home_portal_values(counters)
+        # rtn['volunteer_count'] = request.env['vms.volunteer'].search_count([])
+        return rtn

@@ -16,7 +16,7 @@ class Volunteer(models.Model):
     mobile = fields.Char()
     photo = fields.Image()
 
-    gender = fields.Selection([("male", "male"), ("female", "female")])
+    gender = fields.Selection([("male", "Male"), ("female", "Female")])
     marital_status = fields.Selection(
         [
             ("S", "Single"),

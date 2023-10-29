@@ -2,8 +2,12 @@
 <odoo>
 
     <template id="vm_portal_home" inherit_id="portal.portal_my_home" name="My Portal">
-        <xpath expr="//div[hasclass('o_portal_my_home')]" position="replace">
-            <div>Fuck odoo's custom portal</div>
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <div>jor bakhair</div>
+            <!-- <t t-call="portal.portal_docs_entry"> -->
+                <!-- <t t-set="title" t-value="volunteers"/> -->
+                <!-- <t t-set="placehoder_count" t-value="volunteer_count"/>
+            </t> -->
         </xpath>
     </template>
 
