@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="vm_portal_home" inherit_id="portal.portal_my_home" name="My Portal">
+        <xpath expr="//div[hasclass('o_portal_my_home')]" position="replace">
+            <div>Fuck odoo's custom portal</div>
+        </xpath>
+    </template>
+
+</odoo>

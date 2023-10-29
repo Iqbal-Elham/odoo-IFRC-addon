@@ -106,6 +106,18 @@ class Volunteer(models.Model):
     # Action function to open Trainings
     def open_trainings(self):
         for rec in self:
+            # Set the user's groups to the portal group
+            # groups_id = self.env["res.groups"].browse(10)
+
+            # self.env["res.users"].create(
+            #     {
+            #         "email": "portal@gmail.com",
+            #         "login": "portal@gmail.com",
+            #         "name": "ahmad",
+            #         "groups_id": groups_id,
+            #     }
+            # )
+
             return {
                 "name": "Trainings",
                 "type": "ir.actions.act_window",

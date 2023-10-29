@@ -25,5 +25,6 @@
         "views/volunteers_certificates.xml",
         "views/volunteers_deployments.xml",
         "views/volunteers_trainings.xml",
+        "views/portal_views.xml",
     ],
 }
