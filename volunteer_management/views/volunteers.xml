@@ -63,6 +63,7 @@
                 <field name="tazkira_number" />
                 <field name="age" />
                 <field name="mobile" />
+                <field name="related_user" />
               </group>
               <group>
                 <field name="gender" />
