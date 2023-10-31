@@ -21,10 +21,11 @@
     # always loaded
     "data": [
         "security/ir.model.access.csv",
+        "views/portal_views.xml",
+        "views/portal_home.xml",
         "views/volunteers.xml",
         "views/volunteers_certificates.xml",
         "views/volunteers_deployments.xml",
         "views/volunteers_trainings.xml",
-        "views/portal_views.xml",
     ],
 }
