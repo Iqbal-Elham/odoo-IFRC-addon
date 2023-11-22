@@ -32,7 +32,7 @@
                                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
                                     class="rounded-circle img-fluid" style="width: 150px;" />
                               </t>
-                              <!-- <a t-attf-href="/my/volunteers/print/{{volunteers.id}}" class="fa fa-download">Download</a> -->
+                            <!-- <a t-attf-href="/my/volunteers/print/{{volunteers.id}}" class="fa fa-download">Download</a> -->
                             <!-- <h5 class="my-3"><t t-out="volunteers.name"/></h5> -->
                             <!-- <p class="text-muted mb-1"><t t-out="volunteers.school_id.name"/></p>
                             <p class="text-muted mb-4"><t t-out="volunteers.school_id.address"/></p> -->
@@ -94,7 +94,7 @@
                     <!-- <div class="container py-5">
                         <h1>Chatter Feature</h1>
                         <t t-call="portal.message_thread">
-                            <t t-set="object" t-value="volunteers" />
+                            <t t-set="object" t-value="volunteer" />
                         </t>
                     </div> -->
                 </section>
